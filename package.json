@@ -1,0 +1,89 @@
+{
+  "name": "easygpt",
+  "displayName": "EasyGPT",
+  "description": "AI-powered code assistance with autocompletion, refactoring, error detection, and summarization.",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "easygpt.autocomplete",
+        "title": "AI Autocomplete Code"
+      },
+      {
+        "command": "easygpt.refactorCode",
+        "title": "Refactor Code"
+      },
+      {
+        "command": "easygpt.errorDetection",
+        "title": "Detect and Fix Errors"
+      },
+      {
+        "command": "easygpt.summarizeCode",
+        "title": "Summarize Code Logic"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "easygpt.autocomplete",
+        "key": "ctrl+alt+a",
+        "mac": "cmd+alt+a",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "easygpt.refactorCode",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "easygpt.errorDetection",
+        "key": "ctrl+alt+e",
+        "mac": "cmd+alt+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "easygpt.summarizeCode",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@shadcn/ui": "^0.0.4",
+    "@types/axios": "^0.14.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.16.0",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.5",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.1.6",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "axios": "^1.7.9",
+    "lucide-react": "^0.475.0"
+  }
+}
